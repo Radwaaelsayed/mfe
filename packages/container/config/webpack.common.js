@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   module: {
     rules: [
@@ -11,7 +13,13 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
+
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({ // this plugin for connect html file in public with all project js files
+      template: './public/index.html',
+    }),
+  ]
 };

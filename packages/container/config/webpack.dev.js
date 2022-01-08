@@ -1,5 +1,4 @@
 const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const packageJson = require('../package.json')
@@ -20,9 +19,7 @@ const devConfig = {
       shared: packageJson.dependencies //we use it as a variable to be automaticlly updated when any new package is installed ..if we want each project to have its own packages dont do this step ....imporant of it is to liad esh packad=ge once
     }),
 
-    new HtmlWebpackPlugin({ // this plugin for connect html file in public with all project js files
-      template: './public/index.html',
-    }),
+
   ],
 };
 
